@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="基于混合同态加密的安全人脸识别系统">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <title>安全人脸识别 - 信息</title>
+  <link rel="icon" href="./../static/img/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="./../static/css/weui.min.css">
+  <link rel="stylesheet" href="./../static/css/info.css">
+</head>
+<body>
+  <!-- 页面容器 -->
+  <div class="container-fluid main-container">
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" href="/">
+        <i class="fas fa-shield-alt mr-2"></i>混合同态加密人脸识别
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/"><i class="fas fa-home mr-1"></i>首页</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/gain"><i class="fas fa-camera mr-1"></i>录入</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/info"><i class="fas fa-user-circle mr-1"></i>信息<span class="sr-only">(当前)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/data"><i class="fas fa-database mr-1"></i>数据</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about"><i class="fas fa-info-circle mr-1"></i>关于</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <div class="content-wrapper">
+      <!-- 用户信息卡片 -->
+      <div class="user-card">
+        <div class="user-info">
+          <div class="user-avatar">
+            {% if img_status %}
+            <img src="{{ user_img }}" alt="用户头像" onclick="this.src='{{ user_img }}?'+Math.random()">
+            <div class="status-badge">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            {% else %}
+            <div class="no-avatar">
+              <i class="fas fa-user"></i>
+            </div>
+            {% endif %}
+          </div>
+          <div class="user-details">
+            <h2>用户信息</h2>
+            <div class="user-id">ID: {{ user_id }}</div>
+            <div class="user-status">
+              {% if img_status %}
+              <span class="status verified">
+                <i class="fas fa-shield-alt"></i>
+                数据已加密
+              </span>
+              {% else %}
+              <span class="status pending">
+                <i class="fas fa-exclamation-circle"></i>
+                待录入数据
+              </span>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 功能区域 -->
+      <div class="features-grid">
+        <!-- 人脸比对卡片 -->
+        <div class="feature-card face-compare">
+          <div class="card-header">
+            <i class="fas fa-balance-scale"></i>
+            <h3>人脸比对</h3>
+          </div>
+          <div class="card-body">
+            {% if img_status %}
+            <div class="upload-section">
+              <div class="upload-container">
+                <!-- 上传按钮 -->
+                <div class="upload-buttons-row">
+                  <label class="upload-btn file-btn">
+                    <input type="file" accept="image/jpeg,image/png" id="fileInput">
+                    <i class="fas fa-file-upload"></i>
+                    <span>选择照片</span>
+                  </label>
+                </div>
+
+                <!-- 预览区域 -->
+                <div class="face-preview">
+                  <div class="weui-uploader__files" id="uploaderFiles"></div>
+                </div>
+
+                <!-- 上传状态 -->
+                <div class="upload-status" style="display: none;">
+                  <span class="badge">已选择<span id="uploadCount">0</span>张照片</span>
+                </div>
+
+                <!-- 上传按钮区域 -->
+                <div id="uploadActions" class="uploader-actions" style="display: none;">
+                  <button id="upload" class="btn btn-primary" disabled>
+                    <i class="fas fa-sync-alt"></i> 开始比对
+                  </button>
+                  <button id="clearBtn" class="btn btn-outline">
+                    <i class="fas fa-times"></i> 清除
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- 比对结果区域 -->
+            <div id="compareResult" class="compare-result" style="display: none;">
+              <div id="loading-0" class="loading-container" style="display: none;">
+                <div class="loading-spinner"></div>
+                <p id="tips-0">正在处理数据，请稍候...</p>
+              </div>
+              
+              <div class="result-content" style="display: none;">
+                <div class="similarity-meter">
+                  <div class="meter">
+                    <div class="meter-fill"></div>
+                    <div class="meter-value">0%</div>
+                  </div>
+                  <div class="similarity-text">相似度：<span class="similarity-value">0.00%</span></div>
+                  <div class="result-message"></div>
+                </div>
+              </div>
+            </div>
+            {% else %}
+            <div class="no-data-message">
+              <i class="fas fa-exclamation-circle"></i>
+              <p>请先完成面部数据录入</p>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+  <script src="./../static/js/weui.min.js"></script>
+  <script src="./../static/js/layer.js"></script>
+  <script src="./../static/js/cookie.js"></script>
+  <script src="./../static/js/info.js"></script>
+</body>
+</html>
+{# Author: Toby #}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="基于混合同态加密的安全人脸识别系统">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <title>安全人脸识别 - 首页</title>
+  <link rel="icon" href="./../static/img/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="./../static/css/index.css">
+</head>
+<body>
+  <!-- 页面容器 -->
+  <div class="container-fluid main-container">
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" href="/">
+        <i class="fas fa-shield-alt mr-2"></i>混合同态加密人脸识别
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/"><i class="fas fa-home mr-1"></i>首页<span class="sr-only">(当前)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/gain"><i class="fas fa-camera mr-1"></i>录入</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/info"><i class="fas fa-user-circle mr-1"></i>信息</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/data"><i class="fas fa-database mr-1"></i>数据</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about"><i class="fas fa-info-circle mr-1"></i>关于</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <div class="content-wrapper">
+      <div class="row justify-content-center">
+        <div class="col-lg-10 col-md-12">
+          <!-- 主页内容 -->
+          <div class="hero-section text-center">
+            <h1 class="main-title mb-4">安全的混合同态加密<br>人脸识别系统</h1>
+            <p class="lead mb-4">不同于传统人脸识别方案，我们在数据处理环节选择将用户数据加密后存储，即使数据泄露也不必担心安全问题。混合同态加密允许在加密状态下进行计算，保护您的生物识别信息。</p>
+            <div class="hero-actions">
+              <a href="/gain" class="btn btn-primary btn-lg px-4">
+                <i class="fas fa-user-plus mr-2"></i>开始体验
+              </a>
+            </div>
+          </div>
+          
+          <!-- 特点介绍 -->
+          <div class="features-section mt-5">
+            <div class="row">
+              <div class="col-md-4 mb-4">
+                <div class="feature-card">
+                  <div class="feature-icon">
+                    <i class="fas fa-lock"></i>
+                  </div>
+                  <h3>数据加密存储</h3>
+                  <p>您的面部数据经过混合同态加密技术加密后存储，保证生物识别信息安全。</p>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="feature-card">
+                  <div class="feature-icon">
+                    <i class="fas fa-calculator"></i>
+                  </div>
+                  <h3>加密状态计算</h3>
+                  <p>混合同态加密允许在加密状态下进行计算，无需解密即可完成身份验证。</p>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="feature-card">
+                  <div class="feature-icon">
+                    <i class="fas fa-user-shield"></i>
+                  </div>
+                  <h3>隐私保护</h3>
+                  <p>全过程保护用户隐私，面部特征向量永不以明文形式暴露在不安全环境。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 流程介绍 -->
+          <div class="process-section mt-5">
+            <h2 class="section-title text-center mb-4">使用流程</h2>
+            <div class="process-steps">
+              <div class="row">
+                <div class="col-md-4 mb-4">
+                  <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>面部录入</h3>
+                    <p>通过摄像头拍摄或上传照片完成面部数据录入，系统提取面部特征。</p>
+                    <a href="/gain" class="btn btn-outline-primary btn-sm mt-2">立即录入</a>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                  <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>数据加密</h3>
+                    <p>系统使用混合同态加密技术对面部特征向量进行加密，确保数据安全。</p>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                  <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>安全验证</h3>
+                    <p>验证时，系统在加密状态下比对面部特征，无需解密即可完成身份验证。</p>
+                    <a href="/info" class="btn btn-outline-primary btn-sm mt-2">查看信息</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <p>&copy; 2025 混合同态加密人脸识别系统</p>
+          </div>
+          <div class="col-md-6 text-md-right">
+            <p>College from <a href="https://www.zwu.edu.cn/" target="_blank">ZWU</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- 脚本 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+  <script src="./../static/js/index.js"></script>
+</body>
+</html>
+{# Author: Toby #}

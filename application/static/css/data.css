@@ -1,0 +1,192 @@
+/**
+ * 数据查看页面样式
+ * 基于全同态加密的安全人脸识别系统
+ */
+
+/* 数据卡片样式 */
+.feature-card.data-view {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* 数据组样式 */
+.data-group {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.data-group:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.data-group h4 {
+  display: flex;
+  align-items: center;
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.data-group h4 i {
+  margin-right: 10px;
+  color: #007bff;
+}
+
+/* 数据预览样式 */
+.data-preview {
+  margin-top: 20px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+}
+
+.preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.preview-header h5 {
+  font-size: 1rem;
+  margin: 0;
+  color: #555;
+}
+
+.view-all-link {
+  color: #007bff;
+  cursor: pointer;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+}
+
+.view-all-link i {
+  margin-left: 5px;
+  font-size: 0.75rem;
+}
+
+.view-all-link:hover {
+  text-decoration: underline;
+}
+
+.data-preview-content {
+  background: #f5f5f5;
+  border-radius: 5px;
+  padding: 10px;
+  font-family: monospace;
+  max-height: 150px;
+  overflow-y: auto;
+  margin: 0;
+  font-size: 0.85rem;
+  color: #333;
+  white-space: pre-wrap;
+}
+
+/* 按钮样式 */
+.btn-primary {
+  background: linear-gradient(135deg, #2c7be5 0%, #2196f3 100%);
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #1a68d1 0%, #0d8adf 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(33, 150, 243, 0.3);
+}
+
+.btn-primary i {
+  margin-right: 8px;
+}
+
+/* 加载动画 */
+.loading-dot {
+  display: inline-block;
+  margin-left: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 123, 255, 0.2);
+  border-top-color: #007bff;
+  animation: spin 0.8s linear infinite;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 模态框样式 */
+.modal-content {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 12px 12px 0 0;
+  border-bottom: 1px solid #eee;
+}
+
+.modal-title {
+  font-size: 1.1rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.modal-title i {
+  margin-right: 10px;
+  color: #007bff;
+}
+
+.data-full-container {
+  max-height: 70vh;
+  overflow-y: auto;
+  background: #f5f5f5;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.data-full-content {
+  font-family: monospace;
+  padding: 15px;
+  margin: 0;
+  font-size: 0.9rem;
+  color: #333;
+  white-space: pre-wrap;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .data-group {
+    padding: 15px;
+  }
+  
+  .data-preview {
+    padding: 10px;
+  }
+  
+  .data-preview-content {
+    font-size: 0.75rem;
+    max-height: 120px;
+  }
+  
+  .btn-primary {
+    padding: 6px 14px;
+    font-size: 0.9rem;
+  }
+} 
